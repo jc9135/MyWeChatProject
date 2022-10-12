@@ -1,10 +1,11 @@
-const validateWeChatHostTest = require("../../utils/validateWeChatHost");
+import validateWeChatHostTest from "../../utils/validateWeChatHost";
 
 describe("validateWeChatHost", () => {
-  it("检查是否是来自微信服务器的请求", () => {
+  it("检查是否是来自微信服务器的请求", async () => {
     const ctx = {
       query: {},
     };
-    expect(validateWeChatHostTest(ctx).isWeChatHost).toBe(false);
+    const validateDate = await validateWeChatHostTest(ctx);
+    expect(validateDate.isWeChatHost).toBe(false);
   });
 });

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon  -e ts --exec ts-node app.ts",
+    "tsc": "tsc",
+    "start": "nodemon  bin/www",
+    "dev": "nodemon --watch '**/*.ts' --exec 'ts-node' app.ts",
     "test": "jest"
   },
   "keywords": [],
@@ -23,13 +25,19 @@
   },
   "dependencies": {
     "@types/jest": "^29.1.2",
+    "@types/koa": "^2.13.5",
+    "@types/koa-router": "^7.4.4",
+    "@types/request-promise": "^4.1.48",
+    "@types/xml2js": "^0.4.11",
     "crypto": "^1.0.1",
     "jest": "27.5.1",
     "koa": "^2.13.4",
+    "koa-body": "^5.0.0",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^12.0.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
-    "ts-jest": "27.1.4"
+    "ts-jest": "27.1.4",
+    "xml2js": "^0.4.23"
   }
 }

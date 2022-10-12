@@ -1,4 +1,4 @@
-const { createHash } = require("crypto");
+import { createHash } from "crypto";
 const validateWeChatHost = async (ctx: any) => {
   try {
     const token = "adcdef";
@@ -21,4 +21,4 @@ const validateWeChatHost = async (ctx: any) => {
     };
   }
 };
-module.exports = validateWeChatHost;
+export default validateWeChatHost;

@@ -1,10 +1,9 @@
 // 获取  WeChat  AccessToken
 
-const request = require("request-promise");
-const fs = require("fs");
+import request from "request-promise";
+import fs from "fs";
+import { appId, secret } from "../config";
 
-const appId = "wx3f70053c39e6d20a";
-const secret = "f2d4604a6b903eb74aa9873d05a36078";
 const uri = `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=${appId}&secret=${secret}`;
 const filePath = __dirname + "/token_file/accessToken.json";
 
@@ -38,4 +37,4 @@ const getWeChartAccessToken = async () => {
 // setInterval(() => {
 //   getWeChartAccessToken().then((res) => console.log(res));
 // }, 7200 * 1000);
-module.exports = getWeChartAccessToken;
+export default getWeChartAccessToken;
