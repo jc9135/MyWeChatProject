@@ -10,8 +10,8 @@ const filePath = __dirname + "/token_file/accessToken.json";
 
 const updateAccessToken = async () => {
   const resAccessToken = await request(uri);
-  let formateToken = JSON.parse(resAccessToken);
-  let expireTime = new Date().getTime() + formateToken.expires_in * 1000;
+  const formateToken = JSON.parse(resAccessToken);
+  const expireTime = new Date().getTime() + formateToken.expires_in * 1000;
   formateToken.expireTime = expireTime;
   fs.writeFileSync(filePath, JSON.stringify(formateToken));
 };

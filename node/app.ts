@@ -18,6 +18,7 @@ app.use(async (ctx: any) => {
   if (ctx.request.method === "GET" && result.isWeChatHost) {
     ctx.body = result.echostr;
   } else if (ctx.request.method === "POST" && result.isWeChatHost) {
+    // todo
   }
 });
 // app.use(json());
