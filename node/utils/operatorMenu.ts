@@ -1,3 +1,4 @@
+// 调用微信生成公众号菜单接口
 import request from "request-promise";
 import { MENU_LIST } from "../config";
 import getAccessToken from "./getWeChartAccessToken";
@@ -10,6 +11,6 @@ const createMenu = async () => {
     body: MENU_LIST,
     json: true,
   };
-  const menuResult = await request.post(params);
+  await request.post(params);
 };
 export default createMenu;

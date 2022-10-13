@@ -1,4 +1,4 @@
-const createResponse = (xmlJson: any) => {
+const createResponse = (xmlJson: Record<string, any>) => {
   const commonData = `<xml>
   <ToUserName><![CDATA[${xmlJson.FromUserName}]]></ToUserName>
   <FromUserName><![CDATA[${xmlJson.ToUserName}]]></FromUserName>

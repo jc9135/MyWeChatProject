@@ -30,10 +30,10 @@ app.use(async (ctx: any) => {
   } else if (ctx.request.method === "POST" && result.isWeChatHost) {
     // todo
     const xmlString = await xml2js.parseStringPromise(ctx.request.body);
-    const xmiTemp = xmlString.xml;
-    const xmlJson: any = {};
-    for (const item in xmiTemp) {
-      xmlJson[item] = xmiTemp[item][0];
+    const xmlTemp = xmlString.xml;
+    const xmlJson: Record<string, any> = {};
+    for (const item in xmlTemp) {
+      xmlJson[item] = xmlTemp[item][0];
     }
     if (xmlJson.MsgType === "event" && xmlJson.EventKey === "chifanpiao") {
       xmlJson.type = "news";

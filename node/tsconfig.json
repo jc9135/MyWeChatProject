@@ -10,6 +10,6 @@
     "outDir": "dist", //仅用来控制输出的目录结构
     "baseUrl": ".",
     "types": ["node"]
-  },
-  "include": ["src/**/*"]
+  }
+  // "include": ["src/**/*"]
 }
