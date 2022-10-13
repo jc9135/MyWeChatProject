@@ -8,6 +8,7 @@ import xml2js from "xml2js";
 import getAccessToken from "./utils/getWeChartAccessToken";
 import validateWechatHost from "./utils/validateWeChatHost";
 import createResponse from "./utils/createResponse";
+import getTaoBaoPro from "./utils/getTaoBaoProduct";
 const app = new Koa();
 const router = new Router();
 
@@ -49,8 +50,16 @@ app.use(async (ctx: any) => {
       xmlJson.count = 1;
     } else if (xmlJson.MsgType === "text") {
       // 查询淘宝官方的接口，返回商品的返现和优惠券详情
+      const taoBaoProRes = await getTaoBaoPro(xmlJson.Content);
+      let formateProductInfo = "";
+      if (taoBaoProRes.couponInfo !== 0 || !!taoBaoProRes.retrunMoney) {
+        formateProductInfo = `优惠券：${taoBaoProRes.couponInfo}\n券后价格：${taoBaoProRes.price}\n额外返现：${taoBaoProRes.retrunMoney}\n-----------------------\n${taoBaoProRes.longTpwd}\nTao@Ba0下单`;
+      } else {
+        formateProductInfo = "亲，该商家无活动哦！";
+      }
       xmlJson.type = "text";
-      xmlJson.content = "你好！";
+
+      xmlJson.content = formateProductInfo;
     }
 
     const resMessage = createResponse(xmlJson);

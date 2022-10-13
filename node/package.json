@@ -30,6 +30,7 @@
     "@types/request-promise": "^4.1.48",
     "@types/xml2js": "^0.4.11",
     "crypto": "^1.0.1",
+    "dtk-nodejs-api-sdk": "^1.1.4",
     "jest": "27.5.1",
     "koa": "^2.13.4",
     "koa-body": "^5.0.0",

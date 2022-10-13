@@ -9,7 +9,11 @@
     "sourceMap": true, //用于debug
     "outDir": "dist", //仅用来控制输出的目录结构
     "baseUrl": ".",
-    "types": ["node"]
+    "types": ["node"],
+    "typeRoots": ["./types"]
+  },
+  "ts-node": {
+    "files": true // 增加这一条配置即可，其他同默认配置
   }
   // "include": ["src/**/*"]
 }
