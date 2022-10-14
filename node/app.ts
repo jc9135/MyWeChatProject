@@ -1,8 +1,5 @@
 import Koa from "koa";
 import Router from "koa-router";
-// const json = require("koa-json");
-// import bodyparser from "koa-bodyparser";
-// const logger = require("koa-logger");
 import koaBody from "koa-body";
 import xml2js from "xml2js";
 import getAccessToken from "./utils/getWeChartAccessToken";
@@ -13,11 +10,6 @@ const app = new Koa();
 const router = new Router();
 
 // middlewares
-// app.use(
-//   bodyparser({
-//     enableTypes: ["json", "form", "text"],
-//   })
-// );
 app.use(
   koaBody({
     json: true,
@@ -70,9 +62,6 @@ app.use(async (ctx: any) => {
 // router.get("/", async (ctx: any) => {
 //   ctx.body = "Hello Word";
 // });
-// app.use(json());
-// app.use(logger());
-// app.use(require("koa-static")(__dirname + "/public"))
 
 // routes
 // const user = require("./routes/user")

@@ -1,7 +1,7 @@
 import { createHash } from "crypto";
+import { token } from "../config";
 const validateWeChatHost = async (ctx: any) => {
   try {
-    const token = "adcdef";
     const { signature, echostr, timestamp, nonce } = ctx.query;
     // 1. 将token、timestamp、nonce三个参数进行字典序排序
     const stringArray = [timestamp, nonce, token];

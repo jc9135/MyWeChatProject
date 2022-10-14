@@ -25,6 +25,7 @@ export const MENU_LIST = {
 // 微信
 export const appId = "wx3f70053c39e6d20a";
 export const secret = "f2d4604a6b903eb74aa9873d05a36078";
+export const token = "adcdef";
 
 // 大淘客
 export const appKey = "634809af915fe";
