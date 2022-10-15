@@ -23,8 +23,8 @@ export const MENU_LIST = {
   ],
 };
 // 微信
-export const appId = "wx3f70053c39e6d20a";
-export const secret = "f2d4604a6b903eb74aa9873d05a36078";
+export const appId = "wx55ecdb143f80c36b";
+export const secret = "88874e40ab2814bce23125cd9e8bc1fa";
 export const token = "adcdef";
 
 // 大淘客
